@@ -1,0 +1,22 @@
+# Run pre-commit checks only for branches matching:
+#   feat/123-add-user-settings
+#   bug/145-fix-auth-token-refresh
+# Pattern: ^(feat|bug)\/\d+-[a-z0-9]+(-[a-z0-9]+)*$
+
+branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
+
+lc_branch=$(printf '%s' "$branch" | tr '[:upper:]' '[:lower:]')
+
+if printf '%s' "$lc_branch" | grep -Eq '^(feat|bug)/[0-9]+-[a-z0-9]+(-[a-z0-9]+)*$'; then
+	echo "Running pre-commit checks for branch '$branch'..."
+	npm test
+ 	status=$?
+ 	if [ $status -ne 0 ]; then
+ 		echo "Pre-commit checks failed (npm test returned $status). Aborting commit."
+ 		exit $status
+ 	fi
+else
+ 	echo "Skipping pre-commit checks for branch '$branch'."
+fi
+
+exit 0

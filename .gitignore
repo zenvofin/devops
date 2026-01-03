@@ -1,0 +1,79 @@
+# --- General Operating System and IDE files ---
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+*.suo
+*.user
+*.userprefs
+
+# --- Build Artifacts and Logs ---
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+artifacts/
+log/
+*.log
+*.temp
+*.tmp
+
+# --- Package Management and Dependencies ---
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+pip-log.txt
+
+# Java/Maven (if applicable)
+target/
+
+# --- CI/CD & DevOps Tooling ---
+
+# Docker
+# Ignore local Docker build context/cache
+.dockerignore
+# Ignore generated images/containers if they were tracked previously (use git rm --cached first)
+
+# Terraform (Infrastructure as Code)
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files (sensitive data/state - DO NOT COMMIT TO GIT)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files which may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Local CLI configuration files
+.terraformrc
+terraform.rc
+
+# Kubernetes/Configuration Files (if generated locally)
+# Ignore generated K8s config/kubeconfig files that shouldn't be shared
+kubeconfig
+*.kubeconfig
+
+# Secrets and Sensitive Data (generic patterns)
+# Use a secrets management system instead of committing these
+*.env
+.env.local
+*.key
+*.pem
+*.pfx
+credentials
+secrets.json
+config.yaml.enc

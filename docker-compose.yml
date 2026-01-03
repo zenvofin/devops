@@ -1,0 +1,19 @@
+name: zenvofin
+
+services:
+  postgres:
+    image: postgres:18.1
+    container_name: postgresql
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: zenvofin
+    volumes:
+      - postgresql_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgresql_data:
+    driver: local
