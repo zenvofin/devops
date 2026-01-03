@@ -1,0 +1,18 @@
+{
+  "extends": ["config:base"],
+  "docker": {
+    "enabled": true,
+    "fileMatch": ["(^|/)docker-compose\\.yml$"]
+  },
+  "packageRules": [
+    {
+      "managers": ["docker-compose"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "automerge": false,
+      "stabilityDays": 0,
+      "schedule": ["at any time"]
+    }
+  ],
+  "prHourlyLimit": 3,
+  "prConcurrentLimit": 10
+}
