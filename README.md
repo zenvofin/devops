@@ -6,16 +6,9 @@ The Compose file used for local development lives at `docker-compose.yml`.
 
 ## Requirements
 
-- pnpm package manager
 - Docker
 - Docker Compose
 - Docker Desktop
-
-## Setup
-1. Initalize husky 
-```
-npx husky init
-```
 
 ## Quick start
 
