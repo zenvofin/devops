@@ -1,18 +1,13 @@
 {
-  "extends": ["config:base"],
-  "docker": {
-    "enabled": true,
-    "fileMatch": ["(^|/)docker-compose\\.yml$"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices"],
+  "docker-compose": {
+    "enabled": true
   },
-  "packageRules": [
-    {
-      "managers": ["docker-compose"],
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "automerge": false,
-      "stabilityDays": 0,
-      "schedule": ["at any time"]
-    }
-  ],
+  "dockerfile": {
+    "enabled": true
+  },
+  "schedule": ["at any time"],
   "prHourlyLimit": 3,
   "prConcurrentLimit": 10
 }
