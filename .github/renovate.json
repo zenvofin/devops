@@ -1,13 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices"],
-  "docker-compose": {
-    "enabled": true
-  },
-  "dockerfile": {
-    "enabled": true
-  },
-  "schedule": ["at any time"],
-  "prHourlyLimit": 3,
-  "prConcurrentLimit": 10
+  "schedule": ["before 3am"],
+  "timezone": "Europe/Kyiv",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "groupName": "all dependencies",
+      "groupSlug": "all-updates"
+    }
+  ],
+  "rangeStrategy": "bump",
+  "semanticCommits": "enabled",
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 3,
+  "prCreation": "immediate",
+  "ignoreTests": false
 }
