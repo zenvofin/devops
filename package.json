@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "prettier": "3.8.1",
+    "semantic-release": "25.0.2"
+  }
+}

@@ -1,0 +1,17 @@
+# Standard
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+**/*.min.js
+
+# lockfiles
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# public folder
+/public
+
+README.md
+LICENSE
