@@ -23,6 +23,5 @@ export default {
       },
     ],
     '@semantic-release/release-notes-generator',
-    '@semantic-release/github',
   ],
 };
