@@ -9,7 +9,6 @@ on:
       - main
     paths:
       - 'Dockerfile.postgres'
-  workflow_dispatch:
 
 jobs:
   build:
