@@ -9,7 +9,6 @@ on:
       - main
     paths:
       - 'Dockerfile.postgres'
-  workflow_dispatch:
 
 jobs:
   build-and-push:
@@ -34,8 +33,7 @@ jobs:
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/zenvofin
           tags: |
-            type=raw,value=postgres-latest,enable={{is_default_branch}}
-            type=raw,value=postgres
+            type=raw,value=postgres,enable={{is_default_branch}}
 
       - name: Build and push
         uses: docker/build-push-action@v5
