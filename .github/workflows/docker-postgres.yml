@@ -34,7 +34,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKERHUB_USERNAME }}/zenvofin
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=postgres-latest,enable={{is_default_branch}}
+            type=raw,value=postgres
 
       - name: Build and push
         uses: docker/build-push-action@v5
