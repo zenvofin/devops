@@ -1,5 +1,9 @@
 name: Build and Push Postgres Docker Image
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   push:
     branches:
@@ -7,6 +11,8 @@ on:
     paths:
       - 'Dockerfile.postgres'
   pull_request:
+    branches:
+      - main
     paths:
       - 'Dockerfile.postgres'
 
