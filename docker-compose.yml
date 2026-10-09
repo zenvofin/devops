@@ -21,7 +21,7 @@ services:
       - '5432:5432'
 
   seq:
-    image: datalust/seq:2025.2@sha256:c211452d7f9b7c124a6883d8fa1ad833f276e4aaee3b626beab1eb9675364708
+    image: datalust/seq:2026.1@sha256:9e9cc9183c6efaa7c187407d16901506ab3bc0aed7522bfc3ad7b529be30d8d8
     container_name: seq
     restart: unless-stopped
     environment:
