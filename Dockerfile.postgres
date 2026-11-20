@@ -1,4 +1,4 @@
-FROM postgres:18.2@sha256:b6b4d0b75c699a2c94dfc5a94fe09f38630f3b67ab0e1653ede1b7ac8e13c197
+FROM postgres:19.0@sha256:bb6e70add742cd868fb62cb3b2f67d1dd2bdd2b65a521e778420748753687c60
 
 RUN apt-get update && \
     apt-get install -y postgresql-18-cron && \
